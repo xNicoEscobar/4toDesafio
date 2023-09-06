@@ -25,5 +25,15 @@
 		"price": 700,
 		"thumbnail": "soy_una_7up.png",
 		"stock": 18
+	},
+	{
+		"title": "Soy un producto",
+		"descripction": "soy una descripcion",
+		"price": 3100,
+		"thumbnail": "soy_una_img.jpg",
+		"code": 1123,
+		"stock": 5,
+		"status": true,
+		"id": 4
 	}
 ]

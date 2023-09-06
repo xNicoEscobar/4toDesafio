@@ -1,17 +1,29 @@
 import express  from 'express';
-const app = express()
-import ProductRouter from './routes/products.js'; 
-import cartRouter from './routes/carts.js'; 
+import handlebars from 'express-handlebars';
+import { Server } from 'socket.io';
+import router from './routes/products.js'; 
+import cartRouter from './routes/carts.js';
+import viewsRouter from './routes/viewsRouters.js' 
 
-app.use(express.json())
-app.use(express.urlencoded({extended:true}))
+const app = express();
+const sv = app.listen(8080, () => console.log("Funcando"));
+const socketServer = new Server(sv);
 
-app.use("/api/products", ProductRouter)
-app.use("/api/carts", cartRouter)
+app.engine('handlebars', handlebars.engine());
+app.set('views', './src/views');
+app.set('view engine', 'handlebars');
+app.use(express.static('./src/public'));
 
+app.use((req, res, next) => {
+    req.context = { socketServer };
+    next();
+})  
 
+app.use(express.urlencoded({ extended:true }));
+app.use(express.json());
 
+app.use("/", viewsRouter);
+app.use("/api/products", router);
+app.use("/api/carts", cartRouter);
 
-const sv = app.listen(8080, () => console.log("Funcando"))
-
-sv.on('error', error => console.log(error))
+sv.on('error', error => console.log(error));
