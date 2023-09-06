@@ -10,8 +10,6 @@ app.use("/api/products", ProductRouter)
 app.use("/api/carts", cartRouter)
 
 
-
-
 const sv = app.listen(8080, () => console.log("Funcando"))
 
 sv.on('error', error => console.log(error))
