@@ -4,7 +4,7 @@
     "fs": "^0.0.1-security",
     "nodemon": "^3.0.1"
   },
-  "name": "4to-entregable",
+  "name": "4to-desafio",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xNicoEscobar/4to-entregable.git"
+    "url": "git+https://github.com/xNicoEscobar/4to-desafio.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/xNicoEscobar/4to-entregable/issues"
+    "url": "https://github.com/xNicoEscobar/4to-desafio/issues"
   },
-  "homepage": "https://github.com/xNicoEscobar/4to-entregable#readme",
+  "homepage": "https://github.com/xNicoEscobar/4to-desafio#readme",
   "description": ""
 }
